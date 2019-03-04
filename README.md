@@ -2,6 +2,8 @@
 
 Repository of useful graphics for designing guitar pedal decals.
 
+Gallery: https://warmans.github.io/pedal-decals/index.html
+
 ## Converting SVGs to PNGs
 
 Run `make convert.pngs` to generate PNG versions of all the SVGs (saved to `gen/png`).
