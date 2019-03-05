@@ -4,7 +4,8 @@
     "name": "KNOB SCALE OCD LTR",
     "description": "",
     "tags": [
-      "knob", "ocd"
+      "knob",
+      "ocd"
     ]
   },
   {
@@ -12,7 +13,8 @@
     "name": "KNOB SCALE OCD RTL",
     "description": "",
     "tags": [
-      "knob", "ocd"
+      "knob",
+      "ocd"
     ]
   },
   {
@@ -20,7 +22,8 @@
     "name": "KNOB SCALE RAT",
     "description": "",
     "tags": [
-      "knob", "rat"
+      "knob",
+      "rat"
     ]
   },
   {
@@ -28,7 +31,8 @@
     "name": "PWR CENTER NEGATIVE MUFF",
     "description": "",
     "tags": [
-      "power", "muff"
+      "power",
+      "muff"
     ]
   },
   {
@@ -44,7 +48,8 @@
     "name": "PWR CENTER POSITIVE MUFF",
     "description": "",
     "tags": [
-      "power", "muff"
+      "power",
+      "muff"
     ]
   },
   {
@@ -54,5 +59,11 @@
     "tags": [
       "power"
     ]
+  },
+  {
+    "file_name": "knob-scale-v4.svg",
+    "name": "KNOB SCALE V4",
+    "description": "",
+    "tags": ["knob"]
   }
 ]
