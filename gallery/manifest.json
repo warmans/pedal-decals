@@ -72,12 +72,12 @@
     "file_name": "knob-scale-dots.svg",
     "name": "KNOB SCALE DOTS",
     "description": "",
-    "tags": null
+    "tags": ["knob"]
   },
   {
     "file_name": "knob-scale-minimal.svg",
     "name": "KNOB SCALE MINIMAL",
     "description": "",
-    "tags": null
+    "tags": ["knob"]
   }
 ]
