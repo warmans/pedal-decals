@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pedal Decal Gallery</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style type="text/css">
+        body {
+            background-color: #f6f6f6;
+        }
+
+        .graphic {
+            background-color: #fff;
+            width: 256px;
+            height: 256px;
+            margin-bottom: 24px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .navbar {
+            height: 86px;
+            background-color: #3685B5;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+        }
+
+        .bg-steel-blue {
+            background-color: #3685B5;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <nav class="navbar navbar-dark">
+        <div class="container d-flex justify-content-between">
+            <span class="navbar-brand">Pedal Decal Gallery</span>
+            <a href="https://github.com/warmans/pedal-decals" class="btn btn-light">Github</a>
+        </div>
+    </nav>
+    <div class="container pt-4">
+        <form>
+            <div class="form-group">
+                <input class="form-control form-control-lg" name="search" id="search" placeholder="Filter..."
+                       v-model="keyword">
+            </div>
+        </form>
+    </div>
+    <div class="container pt-3">
+        <div class="graphics d-flex flex-wrap justify-content-between">
+            <div class="graphic d-flex flex-column justify-content-between p-3"
+                 v-for="(item, index) in manifest"
+                 v-if="matchKeyword(keyword, item)">
+                <div>
+                    <a :href="'/svg/'+item.file_name" target="_blank"><img :src="'/svg/'+item.file_name" width="150"/></a>
+                </div>
+                <div class="text-secondary">{{ item.file_name }}</div>
+                <div class="d-flex justify-content-center">
+                    <span v-for="(tag) in item.tags" class="badge badge-dark bg-steel-blue mr-1" @click="setKeyword(tag)">{{ tag }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.js"></script>
+<script type="application/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        Vue.prototype.$http = axios;
+        var app = new Vue({
+            el: '#app',
+            data: {
+                keyword: "",
+                manifest: []
+            },
+            methods: {
+                matchKeyword: function (keyword, graphic) {
+                    if (!keyword) {
+                        return true;
+                    }
+                    if (graphic.file_name.toLowerCase().indexOf(keyword.toLowerCase()) > -1) {
+                        return true
+                    }
+                    if (graphic.tags.join(";").toLowerCase().indexOf(keyword.toLowerCase()) > -1) {
+                        return true
+                    }
+                    return false;
+                },
+                setKeyword(text) {
+                    this.keyword = text;
+                }
+            },
+            created() {
+                var vm = this;
+                this.$http.get('/gallery/manifest.json').then((response) => {
+                    console.log(response);
+                    vm.manifest = response.data;
+                });
+            }
+        })
+    });
+</script>
+</body>
+</html>

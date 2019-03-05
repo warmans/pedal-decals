@@ -2,7 +2,7 @@
 
 Repository of useful graphics for designing guitar pedal decals.
 
-Gallery: https://warmans.github.io/pedal-decals/index.html
+Gallery: https://warmans.github.io/pedal-decals/gallery/index.html
 
 ## Converting SVGs to PNGs
 

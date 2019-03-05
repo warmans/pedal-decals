@@ -12,10 +12,10 @@ convert.pngs: check
 		do echo "$${f}..." && rsvg-convert "svg/$${f}" > "./gen/png/`echo $${f} | sed 's/\(.*\)\..*/\1/'`.png"; \
 	done;
 
-.PHONY: serve
-serve:
-	go run src/cmd/serve/main.go .
+.PHONY: gallery.serve
+gallery.serve:
+	go run tools/cmd/serve/main.go .
 
-.PHONY: update.manifest
-update.manifest:
-	go run src/cmd/manifest/main.go
+.PHONY: gallery.update
+gallery.update:
+	go run tools/cmd/manifest/main.go

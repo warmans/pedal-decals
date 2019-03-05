@@ -7,7 +7,6 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
-	"path"
 	"strings"
 )
 
@@ -31,21 +30,23 @@ func (m Manifest) FindByFilename(name string) *Graphic {
 
 func main() {
 
-	svgPath := flag.String("svg-path", "./svg", "Path to directory containing SVGs")
+	svgDir := flag.String("svg-path", "./svg", "Path to directory containing SVGs")
+	manifestPath := flag.String("manifest-path", "./gallery/manifest.json", "Location of manifest file")
+	flag.Parse()
 
-	_, err := updateManifest(*svgPath)
+	_, err := updateManifest(*svgDir, *manifestPath)
 	if err != nil {
 		log.Fatalf("Failed to update manifest: %s", err.Error())
 	}
 	fmt.Println("Updated Manifest!")
 }
 
-func updateManifest(svgPath string) (Manifest, error) {
+func updateManifest(svgDir string, manifestPath string) (Manifest, error) {
 
 	manifest := Manifest{}
 
 	// parse existing manifest
-	manifestFile, err := os.OpenFile(path.Join(svgPath, "manifest.json"), os.O_RDWR|os.O_CREATE, 0655)
+	manifestFile, err := os.OpenFile(manifestPath, os.O_RDWR|os.O_CREATE, 0655)
 	if err == nil {
 		defer manifestFile.Close()
 		stat, err := manifestFile.Stat()
@@ -62,7 +63,7 @@ func updateManifest(svgPath string) (Manifest, error) {
 	}
 
 	// merge in any new graphics
-	files, err := ioutil.ReadDir(svgPath)
+	files, err := ioutil.ReadDir(svgDir)
 	if err != nil {
 		return nil, err
 	}
