@@ -95,7 +95,7 @@
             },
             created() {
                 var vm = this;
-                this.$http.get('/gallery/manifest.json').then((response) => {
+                this.$http.get('/pedal-decals/gallery/manifest.json').then((response) => {
                     console.log(response);
                     vm.manifest = response.data;
                 });

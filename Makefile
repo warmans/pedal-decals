@@ -2,7 +2,7 @@ GEN_DIR ?= "gen"
 
 .PHONY: check
 check: 
-	which rsvg-convert 1>/dev/null || (echo "\nInstall librsvg2 (ubuntu: librsvg2-bin) to convert SVGs!\n\n"; exit 1)
+	@which rsvg-convert 1>/dev/null || (echo "\nInstall librsvg2 (ubuntu: librsvg2-bin) to convert SVGs!\n\n"; exit 1)
 	
 .PHONY: convert.pngs
 convert.pngs: check
@@ -14,8 +14,9 @@ convert.pngs: check
 
 .PHONY: gallery.serve
 gallery.serve:
-	go run tools/cmd/serve/main.go .
+	@echo "OPEN http://localhost:8080/pedal-decals/gallery/"
+	@go run tools/cmd/serve/main.go ../
 
 .PHONY: gallery.update
 gallery.update:
-	go run tools/cmd/manifest/main.go
+	@go run tools/cmd/manifest/main.go
