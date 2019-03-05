@@ -64,6 +64,20 @@
     "file_name": "knob-scale-v4.svg",
     "name": "KNOB SCALE V4",
     "description": "",
-    "tags": ["knob"]
+    "tags": [
+      "knob"
+    ]
+  },
+  {
+    "file_name": "knob-scale-dots.svg",
+    "name": "KNOB SCALE DOTS",
+    "description": "",
+    "tags": null
+  },
+  {
+    "file_name": "knob-scale-minimal.svg",
+    "name": "KNOB SCALE MINIMAL",
+    "description": "",
+    "tags": null
   }
 ]
