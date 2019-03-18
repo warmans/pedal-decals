@@ -72,12 +72,56 @@
     "file_name": "knob-scale-dots.svg",
     "name": "KNOB SCALE DOTS",
     "description": "",
-    "tags": ["knob"]
+    "tags": [
+      "knob"
+    ]
   },
   {
     "file_name": "knob-scale-minimal.svg",
     "name": "KNOB SCALE MINIMAL",
     "description": "",
-    "tags": ["knob"]
+    "tags": [
+      "knob"
+    ]
+  },
+  {
+    "file_name": "knob-scale-dba-rough.svg",
+    "name": "KNOB SCALE DBA ROUGH",
+    "description": "",
+    "tags": [
+      "knob"
+    ]
+  },
+  {
+    "file_name": "knob-scale-dba.svg",
+    "name": "KNOB SCALE DBA",
+    "description": "",
+    "tags": [
+      "knob"
+    ]
+  },
+  {
+    "file_name": "knob-scale-dot-ring.svg",
+    "name": "KNOB SCALE DOT RING",
+    "description": "",
+    "tags": [
+      "knob"
+    ]
+  },
+  {
+    "file_name": "pwr-center-negative-square.svg",
+    "name": "PWR CENTER NEGATIVE SQUARE",
+    "description": "",
+    "tags": [
+      "power"
+    ]
+  },
+  {
+    "file_name": "pwr-center-positive-square.svg",
+    "name": "PWR CENTER POSITIVE SQUARE",
+    "description": "",
+    "tags": [
+      "power"
+    ]
   }
 ]
