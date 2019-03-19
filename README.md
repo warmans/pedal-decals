@@ -22,7 +22,7 @@ For consistency please contribute icons with the following properties:
 
 /u/AwfulAudioEng
 
-### TODO
+## TODO
 
 Ideas for graphics to add:
 
